@@ -17,6 +17,8 @@
         <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.11"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.11"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11"/>
+        <PackageReference Include="MySql.EntityFrameworkCore" Version="9.0.0-preview" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
 </Project>

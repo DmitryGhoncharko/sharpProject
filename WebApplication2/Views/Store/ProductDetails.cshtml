@@ -1,0 +1,8 @@
+<h1>@Model.Name</h1>
+<img src="@Model.ImageUrl" alt="@Model.Name"/>
+<p>@Model.Description</p>
+<p>Цена: @Model.Price</p>
+<form action="/Cart/AddToCart/@Model.Id" method="post">
+    <input type="number" name="quantity" min="1" max="@Model.Stock" value="1"/>
+    <button type="submit">Добавить в корзину</button>
+</form>

@@ -1,0 +1,38 @@
+@model List<WebApplication2.Models.CartItem>
+@{
+    ViewBag.Title = "Оформление заказа";
+}
+
+<h1>Оформление заказа</h1>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Продукт</th>
+        <th>Количество</th>
+        <th>Цена</th>
+        <th>Итого</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Product.Name</td>
+            <td>@item.Quantity</td>
+            <td>@item.Product.Price:C</td>
+            <td>@(item.Quantity * item.Product.Price):C</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<h3>Итого: @ViewBag.Total:C</h3>
+
+<a href="/Cart/CompleteOrder" class="btn btn-success">Завершить заказ</a>
+<a href="/Cart" class="btn btn-secondary">Вернуться в корзину</a>

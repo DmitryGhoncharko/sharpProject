@@ -1,6 +1,8 @@
-﻿@model IEnumerable<Product>
-
-<h1>Товары</h1>
+﻿<h1>Продукты</h1>
+<form action="/Store/Search" method="get">
+    <input type="text" name="search" placeholder="Поиск продуктов"/>
+    <button type="submit">Поиск</button>
+</form>
 
 <table class="table">
     <thead>
@@ -19,7 +21,7 @@
             <td>@product.Price</td>
             <td>@product.Description</td>
             <td>
-                <a href="/Cart/AddToCart/@product.Id">Добавить в корзину</a>
+                <a href="/Store/ProductDetails/@product.Id">Посмотреть</a>
             </td>
         </tr>
     }
